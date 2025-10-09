@@ -1,0 +1,55 @@
+package main;
+
+import config.config;
+import java.util.Scanner;
+import static main.adminDashboard.adminDashboard;
+import static main.managerDashboard.managerDashboard;
+import static main.supplierDashboard.supplierDashboard;
+
+public class login {
+
+    public static void logIn() {
+        config db = new config();
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter email: ");
+        String email = sc.next();
+
+        System.out.print("Enter Password: ");
+        String pass = sc.next();
+
+        while (true) {
+
+            String qry = ("SELECT * FROM tbl_user WHERE u_email = ? AND u_pass = ?");
+            java.util.List<java.util.Map<String, Object>> result = db.fetchRecords(qry, email, pass);
+
+            if (result.isEmpty()) {
+                System.out.println("INVALID CREDENTIALS!");
+                break;
+            } else {
+                java.util.Map<String, Object> user = result.get(0);
+                String stat = user.get("u_status").toString();
+                String type = user.get("u_type").toString();
+
+                if (stat.equals("Pending")) {
+                    System.out.println("Account is pending, Please contact the admin to approve.");
+                    break;
+
+                } else {
+                    System.out.println("LOGIN SUCCESS!");
+                    if (type.equals("Admin")) {
+                        adminDashboard();
+                    } else if (type.equals("Manager")) {
+                        managerDashboard();
+                    } else if (type.equals("Supplier")) {
+                        supplierDashboard();
+                    }
+                }
+
+            }
+
+        }
+
+    }
+}

@@ -13,16 +13,17 @@ import java.util.Scanner;
  * @author PC16
  */
 public class removeSupplier {
-    public static void removeSupplierInfo(){
+
+    public static void removeSupplierInfo() {
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.println("Enter ID to Delete: ");
         int d_id = sc.nextInt();
-        
+
         config dbConfig = new config();
         String sqlDelete = "DELETE FROM tbl_supplierinfo WHERE supplier_id = ?";
         dbConfig.deleteRecord(sqlDelete, d_id);
-        
+
     }
-    
+
 }

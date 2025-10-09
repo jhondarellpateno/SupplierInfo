@@ -13,12 +13,12 @@ import java.util.Scanner;
  * @author PC16
  */
 public class addSupplier {
-    
-    public static void addSupplierInfo(){
-        
+
+    public static void addSupplierInfo() {
+
         Scanner sc = new Scanner(System.in);
         config db = new config();
-        
+
         System.out.println("Enter name: ");
         String name = sc.next();
         System.out.println("Enter contact number: ");
@@ -31,16 +31,10 @@ public class addSupplier {
         String address = sc.next();
         System.out.println("Enter Status: ");
         String status = sc.next();
-        
+
         String sql = "INSERT INTO tbl_supplierinfo (supplier_name, supplier_contact, supplier_email, supplier_cname, supplier_address, supplier_status) VALUES (?, ?, ?, ?, ?, ?)";
         db.addRecord(sql, name, contact, email, cname, address, status);
-        
-        
-        
-        
-        
-        
-            
+
     }
-    
+
 }
