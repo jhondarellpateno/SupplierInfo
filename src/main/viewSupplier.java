@@ -16,9 +16,10 @@ public class viewSupplier {
     public static void viewSupplierInfo() {
         config conf = new config();
         String supplierQuery = "SELECT * FROM tbl_supplierinfo";
-        String[] supplierHeaders = {"ID", "Name", "Contact", "Email", "CompanyName", "Address", "Status"};
-        String[] supplierColumns = {"supplier_id", "supplier_name", "supplier_contact", "supplier_email", "supplier_cname", "supplier_address", "supplier_status"};
+        String[] supplierHeaders = {"ID", "Name", "Contact", "Email", "CompanyName", "Address"};
+        String[] supplierColumns = {"supplier_id", "supplier_name", "supplier_contact", "supplier_email", "supplier_cname", "supplier_address"};
 
         conf.viewRecords(supplierQuery, supplierHeaders, supplierColumns);
     }
 }
+    

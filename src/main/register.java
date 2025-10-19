@@ -55,8 +55,17 @@ public class register {
         System.out.println("Enter password: ");
         String pass = sc.next();
 
-        String sql = "INSERT INTO tbl_user (u_name, u_email, u_type, u_pass, u_status) VALUES (?, ?, ?, ?, ?)";
-        db.addRecord(sql, name, email, tp, pass, "Pending");
+        String sqlUser = "INSERT INTO tbl_user (u_name, u_email, u_type, u_pass, u_status) VALUES (?, ?, ?, ?, ?)";
+        db.addRecord(sqlUser, name, email, tp, pass, "Pending");
+        boolean userInserted = true;
+
+        if (userInserted && tp.equals("Supplier")) {
+            int userID = db.getLastID();
+
+            String sqlSupplier = "INSERT INTO tbl_supplier (u_id) VALUES (?)";
+            db.addRecord(sqlSupplier, userID);
+        }
+
     }
 
 }

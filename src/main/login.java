@@ -12,6 +12,7 @@ public class login {
         config db = new config();
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("\n--- LOG IN ---");
 
         System.out.print("Enter email: ");
         String email = sc.next();

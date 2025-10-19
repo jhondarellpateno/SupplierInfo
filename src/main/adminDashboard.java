@@ -7,6 +7,7 @@ package main;
 
 import config.config;
 import java.util.Scanner;
+import static main.mainDashboard.mainDashboard;
 import static main.viewUser.viewUser;
 
 /**
@@ -22,7 +23,7 @@ public class adminDashboard {
 
         System.out.println("===WELCOME TO ADMIN DASHBOARD===");
         System.out.println("1. Approve Account");
-        System.out.println("2. Exit");
+        System.out.println("2. Log Out");
         System.out.println("Choose 1 || 2: ");
         int approve = sc.nextInt();
 
@@ -37,7 +38,8 @@ public class adminDashboard {
                 break;
                 
             case 2: 
-                System.out.println("Exiting Program!");
+                mainDashboard();
+                System.out.println("Logging Out...");
                 break;
             default:
                 System.out.println("ErrOR!");

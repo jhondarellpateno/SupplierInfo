@@ -6,6 +6,10 @@
 package main;
 
 import java.util.Scanner;
+import static main.mainDashboard.mainDashboard;
+import static main.updatePurchaseOrderStatus.updatePurchaseOrderStatus;
+import static main.viewAllSupplyOrders.viewAllSupplyOrders;
+import static main.viewPurchaseOrdersAndStatus.viewPurchaseOrdersAndStatus;
 
 /**
  *
@@ -19,22 +23,24 @@ public class supplierDashboard {
         while (true) {
 
             System.out.println("---SUPPLIER DASHBOARD---");
-            System.out.println("1. View My Purchase Order And Status");
-            System.out.println("2. View Performance Scorecard(Ratings)");
+            System.out.println("1. View Purchase Order and Status");
+            System.out.println("2. Update Order Status");
             System.out.println("3. Log Out");
             System.out.println("Choose (1-3): ");
             int choose = sc.nextInt();
 
             switch (choose) {
                 case 1:
-
+                    viewPurchaseOrdersAndStatus();
                     break;
-
-                case 2:
-
+                    
+                case 2: 
+                    viewAllSupplyOrders();
+                    updatePurchaseOrderStatus();
                     break;
-
+                    
                 case 3:
+                    mainDashboard();
                     break;
 
                 default:

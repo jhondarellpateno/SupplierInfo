@@ -5,13 +5,19 @@
  */
 package main;
 
+import static main.mainDashboard.mainDashboard;
+
 /**
  *
- * @author Administrator
+ * @author PC16
  */
-public class addNewSupplyOrder {
-    public static void addNewSupplyOrder(){
-        
+public class main {
+
+   
+     
+    public static void main(String[] args) {
+         mainDashboard();
+
     }
-    
+
 }

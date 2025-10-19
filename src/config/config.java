@@ -34,7 +34,7 @@ public class config {
 
     public void addRecord(String sql, Object... values) {
         try (Connection conn = this.connectDB(); // Use the connectDB method
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // Loop through the values and set them in the prepared statement dynamically
             for (int i = 0; i < values.length; i++) {
@@ -74,8 +74,8 @@ public class config {
         }
 
         try (Connection conn = this.connectDB();
-                PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
-                ResultSet rs = pstmt.executeQuery()) {
+                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+                 ResultSet rs = pstmt.executeQuery()) {
 
             // Print the headers dynamically
             StringBuilder headerLine = new StringBuilder();
@@ -105,7 +105,7 @@ public class config {
 
     public void updateRecord(String sql, Object... values) {
         try (Connection conn = this.connectDB(); // Use the connectDB method
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // Loop through the values and set them in the prepared statement dynamically
             for (int i = 0; i < values.length; i++) {
@@ -139,7 +139,7 @@ public class config {
 
     public void deleteRecord(String sql, Object... values) {
         try (Connection conn = this.connectDB();
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // Loop through the values and set them in the prepared statement dynamically
             for (int i = 0; i < values.length; i++) {
@@ -161,7 +161,7 @@ public class config {
         java.util.List<java.util.Map<String, Object>> records = new java.util.ArrayList<>();
 
         try (Connection conn = this.connectDB();
-                PreparedStatement pstmt = conn.prepareStatement(sqlQuery)) {
+                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery)) {
 
             for (int i = 0; i < values.length; i++) {
                 pstmt.setObject(i + 1, values[i]);
@@ -184,6 +184,27 @@ public class config {
         }
 
         return records;
+    }
+    
+    /**
+     * Retrieves the last inserted row ID. Used after an INSERT operation.
+     * @return The ID (Primary Key) of the last inserted row, or -1 on error.
+     */
+    public int getLastID() {
+        int lastID = -1;
+        // Use try-with-resources to ensure Connection, Statement, and ResultSet are closed.
+        try (Connection conn = this.connectDB();
+             Statement stmt = conn.createStatement();
+             // SQLite specific function to get the ID of the last row inserted
+             ResultSet rs = stmt.executeQuery("SELECT last_insert_rowid()")) { 
+            
+            if (rs.next()) {
+                lastID = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error retrieving last inserted ID: " + e.getMessage());
+        } 
+        return lastID;
     }
 
 }

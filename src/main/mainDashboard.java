@@ -12,11 +12,15 @@ import static main.register.registerUser;
 
 /**
  *
- * @author PC16
+ * @author Administrator
  */
-public class mainMenu {
+public class mainDashboard {
 
-    public static void main(String[] args) {
+    private static void dash() {
+
+    }
+
+    public static void mainDashboard() {
 
         Scanner sc = new Scanner(System.in);
         config db = new config();

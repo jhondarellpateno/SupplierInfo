@@ -3,11 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/mainMenu.java</file>
-            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/config/config.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/viewSupplier.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/viewUser.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/supplierDashboard.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/updateSupplier.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/main.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/userSupplier.java</file>
             <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/login.java</file>
             <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/managerDashboard.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/updatePurchaseOrderStatus.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/viewAllSupplyOrders.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/addSupplierInfo.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/mainDashboard.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/addSupplyOrder.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/config/config.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/adminDashboard.java</file>
             <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/register.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/removeSupplier.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/SYSTEM/SupplierInfo/src/main/viewPurchaseOrdersAndStatus.java</file>
         </group>
     </open-files>
 </project-private>
