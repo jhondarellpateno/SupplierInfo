@@ -1,4 +1,4 @@
-package main;
+package supplierDashboard;
 
 import config.config;
 import java.util.Scanner;
@@ -13,9 +13,10 @@ public class updatePurchaseOrderStatus {
 
         System.out.print("Enter the Order ID (o_id) to update: ");
         int o_id = sc.nextInt();
+        sc.nextLine();
 
         System.out.println("\n--- Set New Status ---");
-        System.out.println("Available options: Shipped, Delivered, Pending.");
+        System.out.println("Available options: Shipped, Delivered.");
         System.out.println("Enter the new status: ");
         String newStatus = sc.nextLine().trim();
 

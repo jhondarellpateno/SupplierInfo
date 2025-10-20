@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package supplierDashboard;
 
 import java.util.Scanner;
-import static main.mainDashboard.mainDashboard;
-import static main.updatePurchaseOrderStatus.updatePurchaseOrderStatus;
-import static main.viewAllSupplyOrders.viewAllSupplyOrders;
-import static main.viewPurchaseOrdersAndStatus.viewPurchaseOrdersAndStatus;
+import static supplierDashboard.updatePurchaseOrderStatus.updatePurchaseOrderStatus;
+import static managerDashboard.viewAllSupplyOrders.viewAllSupplyOrders;
+import static supplierDashboard.viewPurchaseOrdersAndStatus.viewPurchaseOrdersAndStatus;
 
 /**
  *
@@ -17,10 +16,11 @@ import static main.viewPurchaseOrdersAndStatus.viewPurchaseOrdersAndStatus;
  */
 public class supplierDashboard {
 
-    public static void supplierDashboard() {
+    public static void supplierDashboard(String id) {
         Scanner sc = new Scanner(System.in);
+        boolean out = true;
 
-        while (true) {
+        while (out) {
 
             System.out.println("---SUPPLIER DASHBOARD---");
             System.out.println("1. View Purchase Order and Status");
@@ -31,7 +31,7 @@ public class supplierDashboard {
 
             switch (choose) {
                 case 1:
-                    viewPurchaseOrdersAndStatus();
+                    viewPurchaseOrdersAndStatus(id);
                     break;
                     
                 case 2: 
@@ -40,7 +40,7 @@ public class supplierDashboard {
                     break;
                     
                 case 3:
-                    mainDashboard();
+                    out = false;
                     break;
 
                 default:

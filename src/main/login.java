@@ -2,9 +2,9 @@ package main;
 
 import config.config;
 import java.util.Scanner;
-import static main.adminDashboard.adminDashboard;
-import static main.managerDashboard.managerDashboard;
-import static main.supplierDashboard.supplierDashboard;
+import static adminDashboard.adminDashboard.adminDashboard;
+import static managerDashboard.managerDashboard.managerDashboard;
+import static supplierDashboard.supplierDashboard.supplierDashboard;
 
 public class login {
 
@@ -20,22 +20,22 @@ public class login {
         System.out.print("Enter Password: ");
         String pass = sc.next();
 
-        while (true) {
 
             String qry = ("SELECT * FROM tbl_user WHERE u_email = ? AND u_pass = ?");
             java.util.List<java.util.Map<String, Object>> result = db.fetchRecords(qry, email, pass);
 
             if (result.isEmpty()) {
                 System.out.println("INVALID CREDENTIALS!");
-                break;
+                
             } else {
                 java.util.Map<String, Object> user = result.get(0);
+                String id = user.get("u_id").toString();
                 String stat = user.get("u_status").toString();
                 String type = user.get("u_type").toString();
 
                 if (stat.equals("Pending")) {
                     System.out.println("Account is pending, Please contact the admin to approve.");
-                    break;
+                    
 
                 } else {
                     System.out.println("LOGIN SUCCESS!");
@@ -44,7 +44,7 @@ public class login {
                     } else if (type.equals("Manager")) {
                         managerDashboard();
                     } else if (type.equals("Supplier")) {
-                        supplierDashboard();
+                        supplierDashboard(id);
                     }
                 }
 
@@ -52,5 +52,5 @@ public class login {
 
         }
 
-    }
+    
 }

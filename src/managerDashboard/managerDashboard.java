@@ -1,19 +1,20 @@
-package main;
+package managerDashboard;
 
 import java.util.Scanner;
-import static main.addSupplierInfo.addSupplierInfo;
-import static main.addSupplyOrder.addSupplyOrder;
-import static main.mainDashboard.mainDashboard;
-import static main.removeSupplier.removeSupplierInfo;
-import static main.updateSupplier.updateSupplierInfo;
-import static main.viewAllSupplyOrders.viewAllSupplyOrders;
-import static main.viewSupplier.viewSupplierInfo;
+import static managerDashboard.addSupplierInfo.addSupplierInfo;
+import static managerDashboard.addSupplyOrder.addSupplyOrder;
+import static managerDashboard.removeSupplier.removeSupplierInfo;
+import static managerDashboard.updateSupplier.updateSupplierInfo;
+import static managerDashboard.viewAllSupplyOrders.viewAllSupplyOrders;
+import static managerDashboard.viewSupplier.viewSupplierInfo;
 
 public class managerDashboard {
 
     public static void managerDashboard() {
         Scanner sc = new Scanner(System.in);
-        while (true) {
+        boolean out = true;
+        
+        while (out) {
 
             System.out.println("1. Add supplier info.");
             System.out.println("2. View supplier info.");
@@ -59,7 +60,7 @@ public class managerDashboard {
                     break;
 
                 case 7:
-                    mainDashboard();
+                    out = false;
                     break;
                 default:
                     System.out.println("ERROR!");

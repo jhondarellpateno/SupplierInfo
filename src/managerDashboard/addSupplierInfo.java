@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package managerDashboard;
 
 import config.config;
 import java.util.Scanner;
-import static main.userSupplier.viewSupplier;
+import static managerDashboard.userSupplier.viewSupplier;
 
 /**
  *
@@ -20,7 +20,6 @@ public class addSupplierInfo {
         Scanner sc = new Scanner(System.in);
         config db = new config();
 
-        viewSupplier();
         System.out.println("Enter Supplier ID: ");
         int s_id = sc.nextInt();
         System.out.println("Enter name: ");
@@ -33,11 +32,12 @@ public class addSupplierInfo {
         String cname = sc.next();
         System.out.println("Enter Address: ");
         String address = sc.next();
-        System.out.println("Enter Status: ");
-        String status = sc.next();
+        sc.nextLine();
 
-        String sql = "INSERT INTO tbl_supplierinfo (u_id, supplier_name, supplier_contact, supplier_email, supplier_cname, supplier_address, supplier_status) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        db.addRecord(sql, s_id, name, contact, email, cname, address, status);
+        
+
+        String sql = "INSERT INTO tbl_supplierinfo (u_id, supplier_name, supplier_contact, supplier_email, supplier_cname, supplier_address) VALUES (?, ?, ?, ?, ?, ?)";
+        db.addRecord(sql, s_id, name, contact, email, cname, address);
         
 
     }

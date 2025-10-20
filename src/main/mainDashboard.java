@@ -16,18 +16,15 @@ import static main.register.registerUser;
  */
 public class mainDashboard {
 
-    private static void dash() {
-
-    }
-
-    public static void mainDashboard() {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         config db = new config();
         db.connectDB();
         int choose;
+        boolean out = true;
 
-        while (true) {
+        while (out) {
             System.out.println("\n===== MAIN MENU =====");
             System.out.println("1. Log-in");
             System.out.println("2. Register");
@@ -45,7 +42,7 @@ public class mainDashboard {
                     registerUser();
                     break;
                 case 3:
-                    System.exit(0);
+                    out = false;
                     break;
 
                 default:

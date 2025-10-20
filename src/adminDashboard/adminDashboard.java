@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package adminDashboard;
 
 import config.config;
 import java.util.Scanner;
-import static main.mainDashboard.mainDashboard;
-import static main.viewUser.viewUser;
+import static managerDashboard.viewUser.viewUser;
 
 /**
  *
@@ -20,6 +19,9 @@ public class adminDashboard {
 
         Scanner sc = new Scanner(System.in);
         config db = new config();
+        boolean out = true;
+        
+        while(out){
 
         System.out.println("===WELCOME TO ADMIN DASHBOARD===");
         System.out.println("1. Approve Account");
@@ -38,12 +40,12 @@ public class adminDashboard {
                 break;
                 
             case 2: 
-                mainDashboard();
+                out = false;
                 System.out.println("Logging Out...");
                 break;
             default:
                 System.out.println("ErrOR!");
         }
-
+        }
     }
 }

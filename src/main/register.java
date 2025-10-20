@@ -62,7 +62,7 @@ public class register {
         if (userInserted && tp.equals("Supplier")) {
             int userID = db.getLastID();
 
-            String sqlSupplier = "INSERT INTO tbl_supplier (u_id) VALUES (?)";
+            String sqlSupplier = "INSERT INTO tbl_supplierinfo (u_id) VALUES (?)";
             db.addRecord(sqlSupplier, userID);
         }
 

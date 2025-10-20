@@ -1,4 +1,4 @@
-package main;
+package managerDashboard;
 
 import config.config;
 import java.util.Scanner;

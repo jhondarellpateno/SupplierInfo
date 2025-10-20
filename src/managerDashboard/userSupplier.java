@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package managerDashboard;
 
 import config.config;
 
@@ -11,14 +11,13 @@ import config.config;
  *
  * @author Administrator
  */
-public class viewUser {
-
-    public static void viewUser() {
-        String query = "SELECT * FROM tbl_user";
+public class userSupplier {
+    public static void viewSupplier() {
+        String query = "SELECT * FROM tbl_supplier";
         config db = new config();
         
-        String[] userHeader = {"ID", "Name", "Email", "Type", "Status"};
-        String[] userColumn = {"u_id", "u_name", "u_email", "u_type", "u_status"};
+        String[] userHeader = {"ID"};
+        String[] userColumn = {"u_id"};
         
         db.viewRecords(query, userHeader, userColumn);
         
