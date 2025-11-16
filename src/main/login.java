@@ -39,7 +39,7 @@ public class login {
 
                 } else {
                     System.out.println("LOGIN SUCCESS!");
-                    if (type.equals("Admin")) {
+                    x`if (type.equals("Admin")) {
                         adminDashboard();
                     } else if (type.equals("Manager")) {
                         managerDashboard();

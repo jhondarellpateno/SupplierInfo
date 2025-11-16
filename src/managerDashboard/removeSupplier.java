@@ -21,7 +21,7 @@ public class removeSupplier {
         int d_id = sc.nextInt();
 
         config dbConfig = new config();
-        String sqlDelete = "DELETE FROM tbl_supplierinfo WHERE supplier_id = ?";
+        String sqlDelete = "DELETE FROM tbl_supplierinfo WHERE u_id = ?";
         dbConfig.deleteRecord(sqlDelete, d_id);
 
     }

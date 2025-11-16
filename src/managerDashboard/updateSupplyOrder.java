@@ -26,7 +26,7 @@ public class updateSupplyOrder {
         int orderIdToUpdate = -1;
 
         System.out.println("\n===== UPDATE SUPPLY ORDER LINE ITEM =====");
-       
+        
         viewAllSupplyOrders();
         System.out.println("----------------------------------------");
 
@@ -80,7 +80,10 @@ public class updateSupplyOrder {
         String newSize = newSizeInput.isEmpty() ? currentSize : newSizeInput;
         
         int newQuantity = (int) currentOrder.get("o_quantity");
-        double currentPrice = (double) currentOrder.get("o_price"); 
+        
+        // **FIX APPLIED HERE (Originally Line 83)**
+        // Safely converts the price (which might be an Integer or Double object) to a primitive double.
+        double currentPrice = ((Number) currentOrder.get("o_price")).doubleValue(); 
         
         while (true) {
             System.out.printf("Current Quantity: %d\n", newQuantity);
@@ -141,7 +144,7 @@ public class updateSupplyOrder {
         db.updateRecord(sqlUpdate, newStyle, newDesc, newColor, newSize, newQuantity, newPrice, newTotalCost,orderIdToUpdate);
 
         System.out.println("\n✅ Order Line Item (ID: " + orderIdToUpdate + ") successfully updated.");
-        System.out.printf("   New Line Item Cost: ₱%.2f\n", newTotalCost);
+        System.out.printf("    New Line Item Cost: ₱%.2f\n", newTotalCost);
         System.out.println("========================================\n");
     }
 }
