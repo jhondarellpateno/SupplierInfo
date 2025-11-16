@@ -17,7 +17,7 @@ public class removeSupplier {
     public static void removeSupplierInfo() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter ID to Delete: ");
+        System.out.println("Enter Supplier ID to Delete: ");
         int d_id = sc.nextInt();
 
         config dbConfig = new config();
